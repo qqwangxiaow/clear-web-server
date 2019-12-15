@@ -1,6 +1,14 @@
-#include	"./unp.h"
+#include	"unp.h"
 
-int main(int argc, char **argv)
+void
+sig_pipe(int signo)
+{
+	printf("SIGPIPE received\n");
+	return;
+}
+
+int
+main(int argc, char **argv)
 {
 	int					sockfd;
 	struct sockaddr_in	servaddr;
@@ -12,12 +20,17 @@ int main(int argc, char **argv)
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(SERV_PORT);
+	servaddr.sin_port = htons(13);		/* daytime server */
 	Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
+
+	Signal(SIGPIPE, sig_pipe);
 
 	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
 
-	str_cli(stdin, sockfd);		/* do it all */
+	sleep(2);
+	Write(sockfd, "hello", 5);
+	sleep(2);
+	Write(sockfd, "world", 5);
 
 	exit(0);
 }

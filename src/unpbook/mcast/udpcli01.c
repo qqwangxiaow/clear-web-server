@@ -1,23 +1,22 @@
-#include	"./unp.h"
+#include	"unp.h"
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	int					sockfd;
 	struct sockaddr_in	servaddr;
 
 	if (argc != 2)
-		err_quit("usage: tcpcli <IPaddress>");
-
-	sockfd = Socket(AF_INET, SOCK_STREAM, 0);
+		err_quit("usage: udpcli01 <IPaddress>");
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(SERV_PORT);
 	Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
-	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
+	sockfd = Socket(AF_INET, SOCK_DGRAM, 0);
 
-	str_cli(stdin, sockfd);		/* do it all */
+	dg_cli(stdin, sockfd, (SA *) &servaddr, sizeof(servaddr));
 
 	exit(0);
 }

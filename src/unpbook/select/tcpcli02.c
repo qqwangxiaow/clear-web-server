@@ -1,6 +1,8 @@
-#include	"./unp.h"
+/* Use standard echo server; baseline measurements for nonblocking version */
+#include	"unp.h"
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	int					sockfd;
 	struct sockaddr_in	servaddr;
@@ -12,7 +14,7 @@ int main(int argc, char **argv)
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(SERV_PORT);
+	servaddr.sin_port = htons(7);
 	Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
 	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));

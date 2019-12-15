@@ -1,6 +1,10 @@
-#include	"./unp.h"
+/* Test version of client that sends one line without a newline,
+   to break tcpservselect01.c */
 
-int main(int argc, char **argv)
+#include	"unp.h"
+
+int
+main(int argc, char **argv)
 {
 	int					sockfd;
 	struct sockaddr_in	servaddr;
@@ -17,7 +21,8 @@ int main(int argc, char **argv)
 
 	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
 
-	str_cli(stdin, sockfd);		/* do it all */
+	Writen(sockfd, "foo", 3);	/* no newline */
+	sleep(30);
 
 	exit(0);
 }

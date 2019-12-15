@@ -1,8 +1,10 @@
-#include	"./unp.h"
+#include	"unp.h"
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 	int					sockfd;
+	struct linger		ling;
 	struct sockaddr_in	servaddr;
 
 	if (argc != 2)
@@ -17,7 +19,10 @@ int main(int argc, char **argv)
 
 	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
 
-	str_cli(stdin, sockfd);		/* do it all */
+	ling.l_onoff = 1;		/* cause RST to be sent on close() */
+	ling.l_linger = 0;
+	Setsockopt(sockfd, SOL_SOCKET, SO_LINGER, &ling, sizeof(ling));
+	Close(sockfd);
 
 	exit(0);
 }
