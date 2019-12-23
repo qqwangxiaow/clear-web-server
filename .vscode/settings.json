@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "unp.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "functional": "cpp",
+        "iostream": "cpp"
     }
 }

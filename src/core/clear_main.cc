@@ -4,28 +4,29 @@
 #include<sys/types.h> //fork
 #include<cstring>
 #include<stdlib.h>
+#include<iostream>
 #define	SERV_PORT		 9877
 #define	LISTENQ		1024	/* 2nd argument to listen() */
+#define MAXLINE 1024
 using namespace std;
 void
-str_echo(int sockfd)
+Writen(int fd, void *ptr, size_t nbytes)
 {
-	long		arg1, arg2;
+	if (write(fd, ptr, nbytes) != nbytes)
+		cout<<("writen error");
+}
+void str_echo(int sockfd)
+{
 	ssize_t		n;
-	char		line[MAXLINE];
+	char		buf[MAXLINE];
+again:
+	while ( (n = read(sockfd, buf, MAXLINE)) > 0)
+		Writen(sockfd, buf, n);
 
-	for ( ; ; ) {
-		if ( (n = Readline(sockfd, line, MAXLINE)) == 0)
-			return;		/* connection closed by other end */
-
-		if (sscanf(line, "%ld%ld", &arg1, &arg2) == 2)
-			snprintf(line, sizeof(line), "%ld\n", arg1 + arg2);
-		else
-			snprintf(line, sizeof(line), "input error\n");
-
-		n = strlen(line);
-		Writen(sockfd, line, n);
-	}
+	if (n < 0 && errno == EINTR)
+		goto again;
+	else if (n < 0)
+		cout<<("str_echo: read error");
 }
 
 int main(int argc, char **argv)
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 	pid_t				childpid;
 	socklen_t			clilen;
 	struct sockaddr_in	cliaddr, servaddr;
-
+	cout<<"goooooooood";
 	if(listenfd = socket(AF_INET, SOCK_STREAM, 0))
 		return -1;
 
@@ -43,8 +44,7 @@ int main(int argc, char **argv)
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	servaddr.sin_port        = htons(SERV_PORT);
 
-	if(bind(listenfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == -1)
-        return -1;
+	bind(listenfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
 
 	 // 最大等待队列长LISTENQ
     if(listen(listenfd, LISTENQ) == -1)
@@ -62,4 +62,5 @@ int main(int argc, char **argv)
 		}
 		close(connfd);			/* parent closes connected socket */
 	}
+	cout<<"baaaaaaad";
 }
