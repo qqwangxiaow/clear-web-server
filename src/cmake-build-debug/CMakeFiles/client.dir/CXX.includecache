@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wangxiaowei/Documents/git/clear-web-server/src/client.cpp
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+sys/types.h
+-
+cstring
+-
+stdlib.h
+-
+iostream
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+
