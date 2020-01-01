@@ -4,5 +4,6 @@
         "time.h": "c",
         "functional": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

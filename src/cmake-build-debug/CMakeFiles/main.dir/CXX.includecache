@@ -7,18 +7,28 @@
 #IncludeRegexTransform: 
 
 /Users/wangxiaowei/Documents/git/clear-web-server/src/main.cpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+sys/types.h
+-
 sys/socket.h
 -
 netinet/in.h
 -
-unistd.h
+netdb.h
 -
-sys/types.h
+arpa/inet.h
 -
-cstring
+sys/wait.h
 -
-stdlib.h
--
-iostream
+signal.h
 -
 

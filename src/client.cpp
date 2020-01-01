@@ -1,53 +1,88 @@
-//
-// Created by 王晓威 on 2019/12/25.
-//
-#include<sys/socket.h>
-#include<netinet/in.h> /* sockaddr_in{} and other Internet defns */
-#include<unistd.h>	   //fork
-#include<sys/types.h> //fork
-#include<cstring>
-#include<stdlib.h>
-#include<iostream>
-#include<netinet/in.h> //inet_pton
-#include<arpa/inet.h>  //inet_pton
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
-#define	SERV_PORT		 9877
-#define	LISTENQ		1024	/* 2nd argument to listen() */
-#define MAXLINE 1024
-using namespace std;
-void str_cli(FILE *fp, int sockfd)
+#define PORT "3490" // Client 所要连接的 port
+#define MAXDATASIZE 100 // 一次可以收到的最大字节数量（number of bytes）
+
+// 取得 IPv4 或 IPv6 的 sockaddr：
+void *get_in_addr(struct sockaddr *sa)
 {
-    char	sendline[MAXLINE], recvline[MAXLINE];
-
-    while (fgets(sendline, MAXLINE, fp) != NULL) {
-
-        write(sockfd, sendline, strlen(sendline));
-
-        if (read(sockfd, recvline, MAXLINE) == 0)
-            cout<<("str_cli: server terminated prematurely");
-
-        fputs(recvline, stdout);
-    }
+    if(sa->sa_family==AF_INET)
+        return &(((struct sockaddr_in*)sa)->sin_addr);
+    return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
-
-int main(int argc, char **argv)
+int main(int argc,char *argv[])
 {
-    int					sockfd;
-    struct sockaddr_in	servaddr;
+    int sockfd,numbytes;
+    char buf[MAXDATASIZE];
+    struct addrinfo hints,*servinfo,*p;
+    int rv;
+    char s[INET6_ADDRSTRLEN];
 
-    if (argc != 2)
-        cout<<("usage: tcpcli <IPaddress>");
+    if(argc!=2)
+    {
+        fprintf(stderr,"usage:client hostname\n");
+        exit(1);
+    }
 
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    memset(&hints,0,sizeof hints);
+    hints.ai_family=AF_UNSPEC;
+    hints.ai_socktype=SOCK_STREAM;
 
-    bzero(&servaddr, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_port = htons(SERV_PORT);
-    inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
+    if((rv=getaddrinfo(argv[1],PORT,&hints,&servinfo)!=0))
+    {
+        fprintf(stderr,"getaddrinfo:%s\n",gai_strerror(rv));
+        return 1;
+    }
 
-    connect(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr));
+    //循环获得所有结果 先连接到能成功连接的
+    for(p=servinfo;p!=NULL;p=p->ai_next)
+    {
+        if((sockfd=socket(p->ai_family,p->ai_socktype,p->ai_protocol))==-1)
+        {
+            perror("client:socket");
+            continue;
+        }
 
-    str_cli(stdin, sockfd);		/* do it all */
+        if(connect(sockfd,p->ai_addr,p->ai_addrlen)==-1)
+        {
+            close(sockfd);
+            perror("client:connect");
+            continue;
+        }
+        break;
+    }
 
-    exit(0);
+    if(p==NULL)
+    {
+        fprintf(stderr,"client:faild to connect \n");
+        return 2;
+    }
+    
+    inet_ntop(p->ai_family,get_in_addr((struct sockaddr *)p->ai_addr),s,sizeof s);
+    printf("client:connecting to %s\n",s);
+
+    freeaddrinfo(servinfo); //都以这个structure完成
+
+    if((numbytes=recv(sockfd,buf,MAXDATASIZE-1,0))==-1)
+    {
+        perror("recv");
+        exit(1);
+    }
+
+    buf[numbytes]='\0';
+    printf("client:received '%s'\n",buf);
+
+    close(sockfd);
+    return 0;
+
+    
 }
