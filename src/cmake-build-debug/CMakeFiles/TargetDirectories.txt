@@ -1,4 +1,0 @@
-/Users/wangxiaowei/Documents/git/clear-web-server/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/wangxiaowei/Documents/git/clear-web-server/src/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/wangxiaowei/Documents/git/clear-web-server/src/cmake-build-debug/CMakeFiles/client.dir
-/Users/wangxiaowei/Documents/git/clear-web-server/src/cmake-build-debug/CMakeFiles/main.dir
