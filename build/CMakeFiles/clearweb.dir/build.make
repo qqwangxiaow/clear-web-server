@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wangxiaowei/Documents/git/clear-web-server
+CMAKE_SOURCE_DIR = /home/wangxiaowei/Documents/git/clearweb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wangxiaowei/Documents/git/clear-web-server/build
+CMAKE_BINARY_DIR = /home/wangxiaowei/Documents/git/clearweb/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/clearweb.dir/depend.make
@@ -57,41 +57,42 @@ include CMakeFiles/clearweb.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/clearweb.dir/flags.make
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.o: CMakeFiles/clearweb.dir/flags.make
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.o: ../src/core/clear_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/clearweb.dir/src/core/clear_main.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clearweb.dir/src/core/clear_main.cc.o -c /home/wangxiaowei/Documents/git/clear-web-server/src/core/clear_main.cc
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o: CMakeFiles/clearweb.dir/flags.make
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o: ../src/test/Eventloop_test1.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o -c /home/wangxiaowei/Documents/git/clearweb/src/test/Eventloop_test1.cc
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clearweb.dir/src/core/clear_main.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangxiaowei/Documents/git/clear-web-server/src/core/clear_main.cc > CMakeFiles/clearweb.dir/src/core/clear_main.cc.i
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangxiaowei/Documents/git/clearweb/src/test/Eventloop_test1.cc > CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.i
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clearweb.dir/src/core/clear_main.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangxiaowei/Documents/git/clear-web-server/src/core/clear_main.cc -o CMakeFiles/clearweb.dir/src/core/clear_main.cc.s
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangxiaowei/Documents/git/clearweb/src/test/Eventloop_test1.cc -o CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.s
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.requires:
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.requires:
 
-.PHONY : CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.requires
+.PHONY : CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.requires
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.provides: CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.requires
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.provides.build
-.PHONY : CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.provides
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.provides: CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.requires
+	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.provides.build
+.PHONY : CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.provides
 
-CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.provides.build: CMakeFiles/clearweb.dir/src/core/clear_main.cc.o
+CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.provides.build: CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o
 
 
 # Object files for target clearweb
 clearweb_OBJECTS = \
-"CMakeFiles/clearweb.dir/src/core/clear_main.cc.o"
+"CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o"
 
 # External object files for target clearweb
 clearweb_EXTERNAL_OBJECTS =
 
-clearweb: CMakeFiles/clearweb.dir/src/core/clear_main.cc.o
+clearweb: CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o
 clearweb: CMakeFiles/clearweb.dir/build.make
+clearweb: libclearweblib.a
 clearweb: CMakeFiles/clearweb.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable clearweb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable clearweb"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clearweb.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,7 +100,7 @@ CMakeFiles/clearweb.dir/build: clearweb
 
 .PHONY : CMakeFiles/clearweb.dir/build
 
-CMakeFiles/clearweb.dir/requires: CMakeFiles/clearweb.dir/src/core/clear_main.cc.o.requires
+CMakeFiles/clearweb.dir/requires: CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o.requires
 
 .PHONY : CMakeFiles/clearweb.dir/requires
 
@@ -108,6 +109,6 @@ CMakeFiles/clearweb.dir/clean:
 .PHONY : CMakeFiles/clearweb.dir/clean
 
 CMakeFiles/clearweb.dir/depend:
-	cd /home/wangxiaowei/Documents/git/clear-web-server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wangxiaowei/Documents/git/clear-web-server /home/wangxiaowei/Documents/git/clear-web-server /home/wangxiaowei/Documents/git/clear-web-server/build /home/wangxiaowei/Documents/git/clear-web-server/build /home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles/clearweb.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wangxiaowei/Documents/git/clearweb /home/wangxiaowei/Documents/git/clearweb /home/wangxiaowei/Documents/git/clearweb/build /home/wangxiaowei/Documents/git/clearweb/build /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/clearweb.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clearweb.dir/depend
 

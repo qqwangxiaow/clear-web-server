@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wangxiaowei/Documents/git/clear-web-server
+CMAKE_SOURCE_DIR = /home/wangxiaowei/Documents/git/clearweb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wangxiaowei/Documents/git/clear-web-server/build
+CMAKE_BINARY_DIR = /home/wangxiaowei/Documents/git/clearweb/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles /home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clear-web-server/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named clearweblib
+
+# Build rule for target.
+clearweblib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clearweblib
+.PHONY : clearweblib
+
+# fast build rule for target.
+clearweblib/fast:
+	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/build
+.PHONY : clearweblib/fast
+
+#=============================================================================
 # Target rules for targets named clearweb
 
 # Build rule for target.
@@ -123,32 +136,59 @@ clearweb/fast:
 	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/build
 .PHONY : clearweb/fast
 
-src/core/clear_main.o: src/core/clear_main.cc.o
+src/Eventloop.o: src/Eventloop.cc.o
 
-.PHONY : src/core/clear_main.o
+.PHONY : src/Eventloop.o
 
 # target to build an object file
-src/core/clear_main.cc.o:
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/core/clear_main.cc.o
-.PHONY : src/core/clear_main.cc.o
+src/Eventloop.cc.o:
+	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/src/Eventloop.cc.o
+.PHONY : src/Eventloop.cc.o
 
-src/core/clear_main.i: src/core/clear_main.cc.i
+src/Eventloop.i: src/Eventloop.cc.i
 
-.PHONY : src/core/clear_main.i
+.PHONY : src/Eventloop.i
 
 # target to preprocess a source file
-src/core/clear_main.cc.i:
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/core/clear_main.cc.i
-.PHONY : src/core/clear_main.cc.i
+src/Eventloop.cc.i:
+	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/src/Eventloop.cc.i
+.PHONY : src/Eventloop.cc.i
 
-src/core/clear_main.s: src/core/clear_main.cc.s
+src/Eventloop.s: src/Eventloop.cc.s
 
-.PHONY : src/core/clear_main.s
+.PHONY : src/Eventloop.s
 
 # target to generate assembly for a file
-src/core/clear_main.cc.s:
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/core/clear_main.cc.s
-.PHONY : src/core/clear_main.cc.s
+src/Eventloop.cc.s:
+	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/src/Eventloop.cc.s
+.PHONY : src/Eventloop.cc.s
+
+src/test/Eventloop_test1.o: src/test/Eventloop_test1.cc.o
+
+.PHONY : src/test/Eventloop_test1.o
+
+# target to build an object file
+src/test/Eventloop_test1.cc.o:
+	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o
+.PHONY : src/test/Eventloop_test1.cc.o
+
+src/test/Eventloop_test1.i: src/test/Eventloop_test1.cc.i
+
+.PHONY : src/test/Eventloop_test1.i
+
+# target to preprocess a source file
+src/test/Eventloop_test1.cc.i:
+	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.i
+.PHONY : src/test/Eventloop_test1.cc.i
+
+src/test/Eventloop_test1.s: src/test/Eventloop_test1.cc.s
+
+.PHONY : src/test/Eventloop_test1.s
+
+# target to generate assembly for a file
+src/test/Eventloop_test1.cc.s:
+	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.s
+.PHONY : src/test/Eventloop_test1.cc.s
 
 # Help Target
 help:
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... clearweb"
 	@echo "... rebuild_cache"
-	@echo "... src/core/clear_main.o"
-	@echo "... src/core/clear_main.i"
-	@echo "... src/core/clear_main.s"
+	@echo "... clearweblib"
+	@echo "... clearweb"
+	@echo "... src/Eventloop.o"
+	@echo "... src/Eventloop.i"
+	@echo "... src/Eventloop.s"
+	@echo "... src/test/Eventloop_test1.o"
+	@echo "... src/test/Eventloop_test1.i"
+	@echo "... src/test/Eventloop_test1.s"
 .PHONY : help
 
 

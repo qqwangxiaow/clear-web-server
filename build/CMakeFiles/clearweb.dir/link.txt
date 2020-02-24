@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/clearweb.dir/src/core/clear_main.cc.o  -o clearweb -rdynamic 
+/usr/bin/c++    -std=c++11   CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o  -o clearweb -rdynamic libclearweblib.a 

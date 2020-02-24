@@ -1,0 +1,2 @@
+/usr/bin/ar qc libclearweblib.a  CMakeFiles/clearweblib.dir/src/Eventloop.cc.o
+/usr/bin/ranlib libclearweblib.a

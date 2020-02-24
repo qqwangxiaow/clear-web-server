@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/clearweb.dir/src/core/clear_main.cc.o"
+  "CMakeFiles/clearweb.dir/src/test/Eventloop_test1.cc.o"
   "clearweb.pdb"
   "clearweb"
 )

@@ -3,6 +3,6 @@
 
 int main()
 {
-    Eventloop loop;
-    loop.loop();
+    Eventloop a;
+    a.loop();
 }

@@ -7,6 +7,7 @@
 
 #endif //PROJECT_EVENTLOOP_H
 #include"base/CurrentThread.h"
+#include<sys/types.h>
 class Eventloop
 {
 
