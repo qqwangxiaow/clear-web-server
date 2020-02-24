@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles /home/wangxiaowei/Documents/git/clearweb/build/src/CMakeFiles/progress.marks
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named clearweb
+# Convenience name for target.
+src/CMakeFiles/clearweb.dir/rule:
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/clearweb.dir/rule
+.PHONY : src/CMakeFiles/clearweb.dir/rule
 
-# Build rule for target.
-clearweb: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clearweb
+# Convenience name for target.
+clearweb: src/CMakeFiles/clearweb.dir/rule
+
 .PHONY : clearweb
 
 # fast build rule for target.
 clearweb/fast:
-	$(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/build
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/build
 .PHONY : clearweb/fast
 
-#=============================================================================
-# Target rules for targets named eventloop_test
+Eventloop.o: Eventloop.cc.o
 
-# Build rule for target.
-eventloop_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 eventloop_test
-.PHONY : eventloop_test
+.PHONY : Eventloop.o
 
-# fast build rule for target.
-eventloop_test/fast:
-	$(MAKE) -f src/test/CMakeFiles/eventloop_test.dir/build.make src/test/CMakeFiles/eventloop_test.dir/build
-.PHONY : eventloop_test/fast
+# target to build an object file
+Eventloop.cc.o:
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/Eventloop.cc.o
+.PHONY : Eventloop.cc.o
+
+Eventloop.i: Eventloop.cc.i
+
+.PHONY : Eventloop.i
+
+# target to preprocess a source file
+Eventloop.cc.i:
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/Eventloop.cc.i
+.PHONY : Eventloop.cc.i
+
+Eventloop.s: Eventloop.cc.s
+
+.PHONY : Eventloop.s
+
+# target to generate assembly for a file
+Eventloop.cc.s:
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/Eventloop.cc.s
+.PHONY : Eventloop.cc.s
 
 # Help Target
 help:
@@ -143,9 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... clearweb"
-	@echo "... eventloop_test"
+	@echo "... rebuild_cache"
+	@echo "... Eventloop.o"
+	@echo "... Eventloop.i"
+	@echo "... Eventloop.s"
 .PHONY : help
 
 
@@ -157,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/wangxiaowei/Documents/git/clearweb/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

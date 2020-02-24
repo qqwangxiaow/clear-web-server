@@ -60,76 +60,114 @@ CMAKE_SOURCE_DIR = /home/wangxiaowei/Documents/git/clearweb
 CMAKE_BINARY_DIR = /home/wangxiaowei/Documents/git/clearweb/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/clearweblib.dir
+# Directory level rules for directory src
 
-# All Build rule for target.
-CMakeFiles/clearweblib.dir/all:
-	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/depend
-	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles --progress-num=3,4 "Built target clearweblib"
-.PHONY : CMakeFiles/clearweblib.dir/all
+# Convenience name for "all" pass in the directory.
+src/all: src/CMakeFiles/clearweb.dir/all
+src/all: src/test/all
 
-# Include target in all.
-all: CMakeFiles/clearweblib.dir/all
+.PHONY : src/all
 
-.PHONY : all
+# Convenience name for "clean" pass in the directory.
+src/clean: src/CMakeFiles/clearweb.dir/clean
+src/clean: src/test/clean
 
-# Build rule for subdir invocation for target.
-CMakeFiles/clearweblib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clearweblib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 0
-.PHONY : CMakeFiles/clearweblib.dir/rule
+.PHONY : src/clean
 
-# Convenience name for target.
-clearweblib: CMakeFiles/clearweblib.dir/rule
+# Convenience name for "preinstall" pass in the directory.
+src/preinstall: src/test/preinstall
 
-.PHONY : clearweblib
-
-# clean rule for target.
-CMakeFiles/clearweblib.dir/clean:
-	$(MAKE) -f CMakeFiles/clearweblib.dir/build.make CMakeFiles/clearweblib.dir/clean
-.PHONY : CMakeFiles/clearweblib.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/clearweblib.dir/clean
-
-.PHONY : clean
+.PHONY : src/preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/clearweb.dir
+# Target rules for target src/CMakeFiles/clearweb.dir
 
 # All Build rule for target.
-CMakeFiles/clearweb.dir/all: CMakeFiles/clearweblib.dir/all
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/depend
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/build
+src/CMakeFiles/clearweb.dir/all:
+	$(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/depend
+	$(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles --progress-num=1,2 "Built target clearweb"
-.PHONY : CMakeFiles/clearweb.dir/all
+.PHONY : src/CMakeFiles/clearweb.dir/all
 
 # Include target in all.
-all: CMakeFiles/clearweb.dir/all
+all: src/CMakeFiles/clearweb.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/clearweb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clearweb.dir/all
+src/CMakeFiles/clearweb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/clearweb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 0
-.PHONY : CMakeFiles/clearweb.dir/rule
+.PHONY : src/CMakeFiles/clearweb.dir/rule
 
 # Convenience name for target.
-clearweb: CMakeFiles/clearweb.dir/rule
+clearweb: src/CMakeFiles/clearweb.dir/rule
 
 .PHONY : clearweb
 
 # clean rule for target.
-CMakeFiles/clearweb.dir/clean:
-	$(MAKE) -f CMakeFiles/clearweb.dir/build.make CMakeFiles/clearweb.dir/clean
-.PHONY : CMakeFiles/clearweb.dir/clean
+src/CMakeFiles/clearweb.dir/clean:
+	$(MAKE) -f src/CMakeFiles/clearweb.dir/build.make src/CMakeFiles/clearweb.dir/clean
+.PHONY : src/CMakeFiles/clearweb.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/clearweb.dir/clean
+clean: src/CMakeFiles/clearweb.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/test
+
+# Convenience name for "all" pass in the directory.
+src/test/all: src/test/CMakeFiles/eventloop_test.dir/all
+
+.PHONY : src/test/all
+
+# Convenience name for "clean" pass in the directory.
+src/test/clean: src/test/CMakeFiles/eventloop_test.dir/clean
+
+.PHONY : src/test/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/test/preinstall:
+
+.PHONY : src/test/preinstall
+
+#=============================================================================
+# Target rules for target src/test/CMakeFiles/eventloop_test.dir
+
+# All Build rule for target.
+src/test/CMakeFiles/eventloop_test.dir/all:
+	$(MAKE) -f src/test/CMakeFiles/eventloop_test.dir/build.make src/test/CMakeFiles/eventloop_test.dir/depend
+	$(MAKE) -f src/test/CMakeFiles/eventloop_test.dir/build.make src/test/CMakeFiles/eventloop_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles --progress-num=3,4 "Built target eventloop_test"
+.PHONY : src/test/CMakeFiles/eventloop_test.dir/all
+
+# Include target in all.
+all: src/test/CMakeFiles/eventloop_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/test/CMakeFiles/eventloop_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/test/CMakeFiles/eventloop_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles 0
+.PHONY : src/test/CMakeFiles/eventloop_test.dir/rule
+
+# Convenience name for target.
+eventloop_test: src/test/CMakeFiles/eventloop_test.dir/rule
+
+.PHONY : eventloop_test
+
+# clean rule for target.
+src/test/CMakeFiles/eventloop_test.dir/clean:
+	$(MAKE) -f src/test/CMakeFiles/eventloop_test.dir/build.make src/test/CMakeFiles/eventloop_test.dir/clean
+.PHONY : src/test/CMakeFiles/eventloop_test.dir/clean
+
+# clean rule for target.
+clean: src/test/CMakeFiles/eventloop_test.dir/clean
 
 .PHONY : clean
 

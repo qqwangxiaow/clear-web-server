@@ -1,4 +1,4 @@
-# Install script for directory: /home/wangxiaowei/Documents/git/clearweb
+# Install script for directory: /home/wangxiaowei/Documents/git/clearweb/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/wangxiaowei/Documents/git/clearweb/build/src/cmake_install.cmake")
+  include("/home/wangxiaowei/Documents/git/clearweb/build/src/test/cmake_install.cmake")
 
 endif()
 
-if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-else()
-  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-endif()
-
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/wangxiaowei/Documents/git/clearweb/build/${CMAKE_INSTALL_MANIFEST}"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

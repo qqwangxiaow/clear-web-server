@@ -3,6 +3,7 @@
 #include<iostream>
 #include<assert.h>
 #include<sys/poll.h>
+
 __thread Eventloop* isLoopInthisThread=nullptr;
 //__thread变量每一个线程有一份独立实体
 Eventloop::Eventloop()

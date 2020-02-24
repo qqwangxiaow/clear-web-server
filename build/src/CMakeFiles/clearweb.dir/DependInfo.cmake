@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wangxiaowei/Documents/git/clearweb/src/Eventloop.cc" "/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/clearweblib.dir/src/Eventloop.cc.o"
+  "/home/wangxiaowei/Documents/git/clearweb/src/Eventloop.cc" "/home/wangxiaowei/Documents/git/clearweb/build/src/CMakeFiles/clearweb.dir/Eventloop.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../base"
   )
 
 # Targets to which this target links.

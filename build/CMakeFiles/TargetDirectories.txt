@@ -1,4 +1,8 @@
 /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/edit_cache.dir
 /home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/rebuild_cache.dir
-/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/clearweblib.dir
-/home/wangxiaowei/Documents/git/clearweb/build/CMakeFiles/clearweb.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/CMakeFiles/edit_cache.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/CMakeFiles/clearweb.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/CMakeFiles/rebuild_cache.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/test/CMakeFiles/edit_cache.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/test/CMakeFiles/eventloop_test.dir
+/home/wangxiaowei/Documents/git/clearweb/build/src/test/CMakeFiles/rebuild_cache.dir
